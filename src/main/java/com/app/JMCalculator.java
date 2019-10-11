@@ -29,7 +29,7 @@ public class JMCalculator {
 
   public static String calculate(String[] args) throws UnsupportedArithmeticOperationException, InvalidOperandsException {
     if(args.length != 3) {
-      return "-1";
+      throw new InvalidOperandsException();
     }
 
     if(Utils.isRomanNumber(args[0]) && Utils.isRomanNumber(args[2])) {

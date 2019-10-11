@@ -2,7 +2,7 @@ package com.app;
 
 public class Utils {
   public static Boolean isInteger(String n) {
-    return n.matches("(^[0-9]$)|(^10$)");
+    return n.matches("(^[1-9]$)|(^10$)");
   }
 
   public static Boolean isRomanNumber(String n) {
