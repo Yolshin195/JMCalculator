@@ -1,14 +1,25 @@
 public class JMCalculator {
   public static void main(String[] args) {
     try {
-      String r = calculate(args);
-      System.out.println(r);
+      while(true) {
+        System.out.print(Utils.menu());
+        String value = Utils.input();
+
+        if(value.equals("0")) {
+          System.out.println("Exit");
+          break;
+        }
+
+        String r = calculate(value.split(" ", 3));
+        System.out.println(r);
+      }
     } catch(UnsupportedArithmeticOperationException e) {
       System.out.println(e.getMessage());
     } catch(InvalidOperandsException e) {
       System.out.println(e.getMessage());
     }
   }
+
 
   private static int executeComands(String o, int a, int b) throws UnsupportedArithmeticOperationException {
     switch(o) {

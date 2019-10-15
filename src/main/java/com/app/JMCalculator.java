@@ -3,13 +3,20 @@ package com.app;
 public class JMCalculator {
   public static void main(String[] args) {
     try {
-      String r = calculate(args);
+      String r = calculate(input());
       System.out.println(r);
     } catch(UnsupportedArithmeticOperationException e) {
       System.out.println(e.getMessage());
     } catch(InvalidOperandsException e) {
       System.out.println(e.getMessage());
     }
+  }
+
+  private static String[] input() {
+    Scanner in = new Scanner(System.in);
+    System.out.print("Enter: ");
+    String[] args = {in.next(), in.next(), in.next()};
+    return args;
   }
 
   private static int executeComands(String o, int a, int b) throws UnsupportedArithmeticOperationException {
